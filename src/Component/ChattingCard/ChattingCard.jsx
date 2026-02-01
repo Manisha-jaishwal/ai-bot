@@ -55,10 +55,7 @@ export default function ChattingCard({
       />
 
       <Box>
-        <Typography
-          fontWeight={700}
-          fontSize={{ xs: 14, md: 16 }}
-        >
+        <Typography fontWeight={700} fontSize={{ xs: 14, md: 16 }}>
           {details.type === 'AI' ? 'Soul AI' : 'You'}
         </Typography>
 
@@ -67,12 +64,11 @@ export default function ChattingCard({
         </Typography>
 
         <Stack direction="row" gap={2} alignItems="center" mt={1}>
-          <Typography
-            fontSize={{ xs: 8, md: 12 }}
-            color="text.secondary"
-          >
-            {format(details.time, 'hh:mm a')}
-          </Typography>
+          {details.time && (
+            <Typography fontSize={{ xs: 8, md: 12 }} color="text.secondary">
+              {format(new Date(details.time), 'hh:mm a')}
+            </Typography>
+          )}
 
           {details.type === 'AI' && !readOnly && (
             <Stack
