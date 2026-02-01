@@ -1,4 +1,4 @@
-import { TextField, Box, Button, Stack, Snackbar, useMediaQuery } from '@mui/material'
+import { TextField, Box, Button, Stack, Snackbar } from '@mui/material'
 import { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 

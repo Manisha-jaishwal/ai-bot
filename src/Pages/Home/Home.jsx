@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Stack } from '@mui/material';
 import InitialChat from '../../Component/InitialChat/InitialChat';
 import ChatInput from '../../Component/ChatInput/ChatInput';
 import ChattingCard from '../../Component/ChattingCard/ChattingCard';

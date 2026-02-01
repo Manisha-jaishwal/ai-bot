@@ -7,12 +7,8 @@ import AddCommentIcon from "@mui/icons-material/AddComment";
 import CloseIcon from "@mui/icons-material/Close";
 
 export default function Sidebar({ setChat, closeMenu }) {
-  const { mode, setMode } = useContext(ThemeContext);
+  const { mode } = useContext(ThemeContext);
   const isMobile = useMediaQuery("(max-width:800px)");
-
-  const handleMode = () => {
-    setMode((prev) => (prev === "light" ? "dark" : "light"));
-  };
 
   return (
     <Box>
