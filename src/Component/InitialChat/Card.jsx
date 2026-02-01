@@ -1,49 +1,50 @@
-import { Box, Typography, Stack, IconButton } from '@mui/material'
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import { styled } from '@mui/material/styles';
+import { Box, Typography, Stack, IconButton } from "@mui/material";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 export default function Card({ heading, subtext, handleClick }) {
+  return (
+    <Stack
+      direction="row"
+      justifyContent="space-between"
+      alignItems="center"
+      width={650} 
+      minHeight={180}
+      p={4}
+      borderRadius={3}
+      bgcolor="#fff"
+      boxShadow="0 6px 20px rgba(0,0,0,0.12)"
+      onClick={() => handleClick(heading)}
+      sx={{
+        cursor: "pointer",
+        transition: "all 0.3s ease",
+        "&:hover": {
+          bgcolor: "#f8f9fc",
+          transform: "translateY(-2px)",
+        },
+        "&:hover .MuiIconButton-root": {
+          opacity: 1,
+        },
+      }}
+    >
+      <Box>
+        <Typography fontWeight={700} fontSize={{ xs: 18, md: 22 }}>
+          {heading}
+        </Typography>
+        <Typography fontSize={{ xs: 14, md: 16 }} color="text.secondary">
+          {subtext}
+        </Typography>
+      </Box>
 
-    return (
-        <Stack
-            bgcolor={'primary.light'}
-            p={{ xs: 1.2, md: 3 }}
-            borderRadius={1}
-            boxShadow={'0 0 12px rgba(0,0,0,0.1)'}
-            direction={'row'}
-            spacing={1}
-            alignItems={'center'}
-            justifyContent={'space-between'}
-            sx={{
-                '&:hover .MuiIconButton-root': {
-                    opacity: 1
-                },
-                cursor: 'pointer',
-                '&:hover' : {
-                    bgcolor:'primary.bglight'
-                },
-                transition: 'background 200ms ease'
-            }}
-            onClick={() => handleClick(heading)}
-        >
-            <Box>
-                <Typography
-                    variant='heading'
-                    fontWeight={700}
-                    fontSize={{xs:14,md:20}}
-                >
-                    {heading}
-                </Typography>
-                <Typography
-                    color={'text.secondary'}
-                    fontSize={{xs:10, md:16}}
-                >
-                    {subtext}
-                </Typography>
-            </Box>
-            <IconButton size='small' sx={{ opacity: 0, bgcolor: 'primary.bglight', transition: 'opacity 400ms ease' }}>
-                <ArrowUpwardIcon fontSize='inherit' />
-            </IconButton>
-        </Stack>
-    )
+      <IconButton
+        size="large"
+        sx={{
+          opacity: 0,
+          bgcolor: "#ede7f6",
+          transition: "opacity 0.3s ease",
+        }}
+      >
+        <ArrowUpwardIcon />
+      </IconButton>
+    </Stack>
+  );
 }
