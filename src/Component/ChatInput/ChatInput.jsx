@@ -64,20 +64,15 @@ export default function ChatInput({
           />
 
           <Button
-            data-testid="send-button"
-            variant="contained"
-            type="submit"
-            sx={{
-              fontSize: { xs: 12, md: 16 },
-              "@media (max-width:767px)": {
-                minWidth: 0,
-                paddingLeft: 1.5,
-                paddingRight: 1.5,
-              },
-            }}
-          >
-            Soul AI
-          </Button>
+  disableRipple
+  disableFocusRipple
+  data-testid="send-button"
+  variant="contained"
+  type="submit"
+>
+  Soul AI
+</Button>
+
 
           <Button
             data-testid="save-button"
