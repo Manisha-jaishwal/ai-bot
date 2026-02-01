@@ -7,7 +7,7 @@ export default function Card({ heading, subtext, handleClick }) {
       direction="row"
       justifyContent="space-between"
       alignItems="center"
-      width={650} 
+      width={550} 
       minHeight={180}
       p={4}
       borderRadius={3}

@@ -25,7 +25,7 @@ export default function ChatInput({
 
     localStorage.setItem(
       "chat",
-      JSON.stringify([{ chat: chat, datetime: date }, ...chat_history])
+      JSON.stringify([{ chat: chat, datetime: date }, ...chat_history]),
     );
 
     clearChat();
@@ -60,6 +60,7 @@ export default function ChatInput({
 
           {/* IMPORTANT: Cypress expects this text */}
           <Button
+            data-testid="send-button"
             variant="contained"
             type="submit"
             sx={{
